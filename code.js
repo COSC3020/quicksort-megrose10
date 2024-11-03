@@ -28,7 +28,7 @@ function quicksort(array) {
     size = size - 1;
   }while(size > 0);
   let sizeOfNewArray = newArray.length;
-  let newSize = array.length - 1;
+  //let newSize = array.length - 1;
   do{
     let pivotpos = array[newArray.length];
     for(let i = array.length - 1; i > array.indexOf(pivotpos); i--) {
