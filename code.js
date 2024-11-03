@@ -39,9 +39,9 @@ function quicksort(array) {
         array[n] = tmp;
       }
     }
-    console.log(array); // SORTED HERE
+    //console.log(array); // SORTED HERE
     
-    console.log(array.length);
+    //console.log(array.length);
      for(let i = sizeOfNewArray; i < array.indexOf(pivotpos); i++) {
       let n = array.indexOf(pivotpos);
       if(pivotpos<array[i]) {
@@ -51,7 +51,7 @@ function quicksort(array) {
       }
     }
     //console.log(array);
-    console.log("done?");
+    //console.log("done?");
     newArray[array.indexOf(pivotpos)]  = pivotpos;
     size = size - 1;
     if(array.length == newArray.length) {
