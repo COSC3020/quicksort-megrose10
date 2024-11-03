@@ -5,6 +5,8 @@ template I've provided in `code.js`. Test your new function; I've provided some
 basic testing code that uses [jsverify](https://jsverify.github.io/) in
 `code.test.js`.
 
+Olivia and I worked on this together. 
+
 Hint: To make quicksort iterative, think about the part of the array each
 recursive call considers.
 
