@@ -1,65 +1,62 @@
 function quicksort(array) {
-  let sorted = false
-  let newArray = [];
-  let size = array.length - 1;
-  let isSorted = false;
-  do{
-    let pivotpos = array[0];
-    for(let i = array.length - 1; i > array.indexOf(pivotpos); i--) {
-      let n = array.indexOf(pivotpos);
-      if(pivotpos>array[i]) {
-        let tmp = array[i];
-        array[i] = pivotpos;
-        array[n] = tmp;
-      }
+    if(array.length < 1) {
+        return array;
     }
-    //console.log(array);
-    //console.log(array.length);
-     for(let i = 0; i < array.indexOf(pivotpos); i++) {
-      let n = array.indexOf(pivotpos);
-      if(pivotpos<array[i]) {
-        let tmp = array[i];
-        array[i] = pivotpos;
-        array[n] = tmp;
-      }
-    }
-    //console.log(array);
-    newArray[array.indexOf(pivotpos)]  = pivotpos;
-    size = size - 1;
-  }while(size > 0);
-  let sizeOfNewArray = newArray.length;
-  //let newSize = array.length - 1;
-  do{
-    let pivotpos = array[newArray.length];
-    for(let i = array.length - 1; i > array.indexOf(pivotpos); i--) {
-      let n = array.indexOf(pivotpos);
-      if(pivotpos>array[i]) {
-        let tmp = array[i];
-        array[i] = pivotpos;
-        array[n] = tmp;
-      }
-    }
-    //console.log(array); // SORTED HERE
-    
-    //console.log(array.length);
-     for(let i = sizeOfNewArray; i < array.indexOf(pivotpos); i++) {
-      let n = array.indexOf(pivotpos);
-      if(pivotpos<array[i]) {
-        let tmp = array[i];
-        array[i] = pivotpos;
-        array[n] = tmp;
-      }
-    }
-    //console.log(array);
-    //console.log("done?");
-    newArray[array.indexOf(pivotpos)]  = pivotpos;
-    size = size - 1;
-    if(array.length == newArray.length) {
-        isSorted = true;
-    }
-  }while(isSorted != true);
+    let quickQueue = [];
+    quickQueue.push(0);
+    quickQueue.push(array.length - 1);
+    //console.log(quickQueue);
+    while(quickQueue.length > 0) {
+        let hi = quickQueue.pop();
+        //console.log(quickQueue);
+        let lo = quickQueue.pop();
+        //console.log("hi = " + hi);
+        //console.log("lo = " + lo);
+        if(hi <= lo) continue;
+        let middle = Math.floor((lo + hi) / 2);
+        //let pIndex = low;
+        //console.log("test for if hi > lo");
+        //console.log(pIndex);
 
-    
+        if(array[middle] < array[lo]) {
+            let tmp = array[lo];
+            array[lo] = array[middle];
+            array[middle] = tmp;
+        }
+        //console.log(array);
+
+        if(array[hi] < array[middle]) {
+            let tmp = array[middle];
+            array[middle] = array[hi];
+            array[hi] = tmp;
+        }
+        //console.log(array);
+        let p = array[lo];
+        //console.log(pivot);
+        //console.log(array);
+        let pIndex = lo + 1;
+        //console.log(pIndex2);
+        for(let i = lo + 1; i <= hi; i++) {
+            if(array[i] < p) {
+                //console.log(array[hi]);
+                let tmp = array[i];
+                array[i] = array[pIndex];
+                array[pIndex] = tmp;
+                pIndex++;
+            }
+        }
+            //console.log(array);
+            //console.log(pIndex2);
+            //let pIndex3 = pIndex2 - 1;
+        let tmp = array[lo];
+        array[lo] = array[pIndex - 1];
+        array[pIndex - 1] = tmp;
+
+        quickQueue.push(lo);
+        quickQueue.push(pIndex - 2);
+        quickQueue.push(pIndex);
+        quickQueue.push(hi);
+    }
     return array;
 }
 
