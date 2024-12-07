@@ -5,7 +5,7 @@ template I've provided in `code.js`. Test your new function; I've provided some
 basic testing code that uses [jsverify](https://jsverify.github.io/) in
 `code.test.js`.
 
-Olivia and I worked on this together for the first implementation. When I changed my implementation to using a queue, I used https://www.geeksforgeeks.org/implementation-queue-javascript/, to read more on queues in javascript and the functions that come with them.  https://www.geeksforgeeks.org/how-to-remove-a-specific-element-from-queue/. I used the class slides on quicksort and also remembered median of three from quicksort pivot.
+Olivia and I worked on this together for the first implementation. When I changed my implementation to using a queue, I used https://www.geeksforgeeks.org/implementation-queue-javascript/, to read more on queues in javascript and the functions that come with them.  https://www.geeksforgeeks.org/how-to-remove-a-specific-element-from-queue/. I used the class slides on quicksort and also remembered the idea of median of three from quicksort pivot.
 
 Hint: To make quicksort iterative, think about the part of the array each
 recursive call considers.
